@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { Switch } from "react-router";
+import { Route, withRouter } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 
-function App() {
+import Main from "./pages/Main";
+import Cart from "./pages/Cart";
+import Navbar from "./components/Navbar";
+
+import { fetchData } from "./store/actions/productsActions";
+import { connect } from "react-redux";
+
+import "./App.css";
+
+const App: React.FC<WithAppProps> = (props) => {
+  const { location } = props;
+  const { fetchData } = props; // main fetch function
+
+  useEffect(() => {
+    const endpoint =
+      "https://vitl-static-api.s3-eu-west-1.amazonaws.com/fe-test.json";
+    fetchData(endpoint);
+    // eslint-disable-next-line
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HelmetProvider>
+        <Navbar />
+        <Switch location={location}>
+          <Route exact path="/" component={Main} />
+          <Route path="/cart" component={Cart} />
+        </Switch>
+      </HelmetProvider>
     </div>
   );
-}
+};
 
-export default App;
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    fetchData: (url: any) => dispatch(fetchData(url)),
+  };
+};
+
+export default withRouter(connect(null, mapDispatchToProps)(App));
+
+interface WithAppProps {
+  location: any;
+  fetchData: (val: any) => void;
+}

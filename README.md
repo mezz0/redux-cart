@@ -1,23 +1,13 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode and automatically opens up web browser.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The page will reload if you make changes.\
 
 ### `npm run build`
 
@@ -27,20 +17,40 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You may also serve the build folder by running `serve -s build`
 
-### `npm run eject`
+### Typescript
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+There has been an attempt at using typescript, it is a new ground for me so I am still in the process of learning.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prettier
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+I have also used prettier as means to format/prettify the project.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+useage: `npx prettier --write .`
 
-## Learn More
+### Responsive design
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The site is fully responsive down to mobile sizes. Not tested on all devices, just on the devices available to me.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Material UI
+
+I have used Material UI for simple icons, but the scope of Material UI can be expanded to input boxes and themeing the entire project.
+
+### Styled Components
+
+Chosen to use styled components to style the components (no global theme set).
+
+### Redux
+
+I have included redux to handle the state globally. I have also used redux thunk to help fetch data from the api.
+
+### Redux Persist
+
+I have also used redux persist to maintain the selections on page reload.
+
+### Finally...
+
+I would like to take this time to say thank you for giving me this challenge. It was a good learning curve and has also give me lots to learn.
+
+Thank you.
