@@ -48,9 +48,3 @@ I have included redux to handle the state globally. I have also used redux thunk
 ### Redux Persist
 
 I have also used redux persist to maintain the selections on page reload.
-
-### Finally...
-
-I would like to take this time to say thank you for giving me this challenge. It was a good learning curve and has also give me lots to learn.
-
-Thank you.
